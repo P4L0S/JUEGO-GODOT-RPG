@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbvo0qrbakotq"]
+
+[ext_resource type="Script" path="res://scripts/creditos.gd" id="1_klsng"]
+[ext_resource type="PackedScene" uid="uid://bvi6qd6mv465f" path="res://escenas/guerrero.tscn" id="1_ydsv3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpir8"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wluk"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klsng")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 21.0
+offset_right = 272.0
+offset_bottom = 230.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tpir8")
+text = "                                
+
+
+                             Juego creado por Mario Ruiz Ibañez"
+
+[node name="salir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 63.0
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wluk")
+text = "SALIR"
+
+[node name="Guerrero" parent="." instance=ExtResource("1_ydsv3")]
+position = Vector2(629, 573)
+script = null
+
+[connection signal="pressed" from="salir" to="." method="_on_button_pressed"]

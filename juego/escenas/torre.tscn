@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://boxp8q52mj7vj"]
+
+[ext_resource type="Texture2D" uid="uid://dob18l68mvf0g" path="res://animaciones e imágenes/Tiny Swords (Update 010)/Factions/Knights/Buildings/Tower/Tower_Purple.png" id="1_sfqy3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt6nl"]
+atlas = ExtResource("1_sfqy3")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l82a8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lt6nl")
+}],
+"loop": true,
+"name": &"torre",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2eidk"]
+radius = 53.0
+height = 152.0
+
+[node name="Torre" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(591, 205)
+scale = Vector2(0.796875, 0.765625)
+sprite_frames = SubResource("SpriteFrames_l82a8")
+animation = &"torre"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(591, 214)
+shape = SubResource("CapsuleShape2D_2eidk")

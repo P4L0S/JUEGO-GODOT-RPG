@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://dot6ds6w124tj"]
+
+[ext_resource type="Script" path="res://scripts/resolución.gd" id="1_jk1i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6a06"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Resolución" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jk1i4")
+
+[node name="ajustes de video" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Video" type="TabBar" parent="ajustes de video"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ajustes de video/Video"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.929
+anchor_bottom = 0.896
+offset_right = -0.119995
+offset_bottom = -0.343994
+
+[node name="GridContainer" type="GridContainer" parent="ajustes de video/Video/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="tIPO DE PANTALLA" type="Label" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Screen"
+
+[node name="OptionButton" type="OptionButton" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Pantalla completa"
+popup/item_1/text = "Ventana"
+popup/item_1/id = 1
+
+[node name="tIPO DE PANTALLA2" type="Label" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Vsync"
+
+[node name="CheckButton" type="CheckButton" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="tIPO DE PANTALLA3" type="Label" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Mostrar FPS"
+
+[node name="CheckButton2" type="CheckButton" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+
+[node name="tIPO DE PANTALLA4" type="Label" parent="ajustes de video/Video/MarginContainer/GridContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Limitador de FPS"
+
+[node name="HSlider" type="HSlider" parent="ajustes de video/Video/MarginContainer/GridContainer/tIPO DE PANTALLA4"]
+layout_mode = 2
+offset_left = 139.0
+offset_top = -14.0
+offset_right = 674.0
+offset_bottom = 39.0
+min_value = 30.0
+max_value = 144.0
+value = 30.0
+
+[node name="salir" type="Button" parent="."]
+offset_left = 1227.0
+offset_top = -1.0
+offset_right = 1279.0
+offset_bottom = 30.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_a6a06")
+text = "SALIR"
+
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]

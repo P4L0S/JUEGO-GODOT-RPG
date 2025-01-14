@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ro2p13chejit"]
+
+[ext_resource type="PackedScene" uid="uid://bvi6qd6mv465f" path="res://escenas/guerrero.tscn" id="1_rkqey"]
+[ext_resource type="PackedScene" uid="uid://dy117sdgeduaq" path="res://escenas/enemigo.tscn" id="2_krquq"]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Guerrero" parent="." instance=ExtResource("1_rkqey")]
+position = Vector2(548, 251)
+
+[node name="Enemigo" parent="." instance=ExtResource("2_krquq")]
+position = Vector2(171, 137)

@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm0eer7f67jct"]
+
+[ext_resource type="Script" path="res://scripts/opciones.gd" id="1_kq5fg"]
+[ext_resource type="Texture2D" uid="uid://b4klnw8f3j61n" path="res://animaciones e imágenes/wallpaper_ioi_online_fantasy_rpg_01_1920x1080.jpg" id="2_16032"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yu2vd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bheo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4004s"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kq5fg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_16032")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -49.5
+offset_right = 69.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resolucion" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yu2vd")
+text = "RESOLUCIÓN"
+
+[node name="Volumen" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6bheo")
+text = "VOLUMEN"
+
+[node name="Atras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4004s")
+text = "ATRAS"
+
+[connection signal="pressed" from="VBoxContainer/Resolucion" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolucion" to="." method="_on_resolucion_pressed"]
+[connection signal="pressed" from="VBoxContainer/Volumen" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Atras" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/Atras" to="." method="_on_atras_pressed"]
